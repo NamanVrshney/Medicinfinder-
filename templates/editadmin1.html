@@ -1,0 +1,9 @@
+{% extends "admin.html" %}
+{% block n2 %}
+<h1>Update Status</h1>
+{% if result == 'success'%}
+    <h2>Record Update Successfully</h2>
+{% else %}
+    <h2>Try Again</h2>
+{% endif %}
+{% endblock %}

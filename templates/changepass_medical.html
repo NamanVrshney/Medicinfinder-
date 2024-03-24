@@ -1,0 +1,16 @@
+{% extends "medical.html" %}
+{% block n3 %}
+
+<h1>Change Password</h1>
+<form method="post" action="changepass_medical">
+    <p> Old Password : <input type="password" name="T1" id="txt1"></p>
+    <p> New Password : <input type="password" name="T2" id="txt2"></p>
+    <p> Confirm Password : <input type="password" name="T3" id="txt3"></p>
+    <p><button type="submit" name="B1" id="btn1">Change password</button> </p>
+</form>
+
+{% if msg %}
+ <h2>{{msg}}</h2>
+{% endif %}
+
+{% endblock %}

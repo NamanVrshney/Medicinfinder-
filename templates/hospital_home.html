@@ -1,0 +1,70 @@
+{% extends 'hospital_master.html' %}
+
+{% block m1 %}
+
+<h1>Hospital Home</h1>
+<p><a href="doctor_reg">Add Doctor</a> </p>
+
+<h2>Doctor List</h2>
+{% if doctors %}
+    {% for row in doctors %}
+        <h3>Name: {{ row[0] }}</h3>
+        <p>
+        Speciality : {{ row[1] }}<br/>
+        Timing : {{ row[3] }} <br/>
+        Days :
+        {% if row[4]=='yes' %}
+            MON &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        {% if row[5]=='yes' %}
+            TUE &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        {% if row[6]=='yes' %}
+            WED &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        {% if row[7]=='yes' %}
+            THU &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        {% if row[8]=='yes' %}
+            FRI &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        {% if row[9]=='yes' %}
+            SAT &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        {% if row[10]=='yes' %}
+            SUN &nbsp;&nbsp;&nbsp;
+        {% endif %}
+
+        <table border="0">
+        <tr>
+            <td>
+                <form method="post" action="edit_doctor">
+                    <input type="hidden" name="H1" value="{{ row[0] }}" />
+                    <input type="hidden" name="H2" value="{{ row[1] }}" />
+                    <input type="submit" name="B1" value="Edit" />
+                </form>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <form method="post" action="delete_doctor">
+                    <input type="hidden" name="H1" value="{{ row[0] }}" />
+                    <input type="hidden" name="H2" value="{{ row[1] }}" />
+                    <input type="submit" name="B1" value="Delete" />
+                </form>
+            </td>
+        </tr>
+
+        </table>
+
+        </p>
+        <hr/>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

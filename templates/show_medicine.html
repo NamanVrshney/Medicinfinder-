@@ -1,0 +1,38 @@
+{% extends "medical.html" %}
+{% block n3 %}
+
+<h1>Show Medicine</h1>
+{% if vgt %}
+{% for d in vgt %}
+    <h3>{{d[0]}}</h3>
+<p>
+    name : {{d[1]}}<br>
+    company : {{d[2]}}<br>
+    unit_prize : {{d[3]}}<br>
+    description : {{d[4]}}<br>
+    email_of_medical : {{d[5]}}
+</p>
+<table>
+    <tr>
+        <td>
+            <form method="POST" action="edit_medicine">
+                <input type="hidden" name="H1" value="{{d[0]}}">
+                <input type="submit" value="edit">
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="delete_medicine">
+                <input type="hidden" name="H1" value="{{d[0]}}">
+                <input type="submit" value="delete">
+            </form>
+        </td>
+    </tr>
+</table>
+
+{% endfor %}
+
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}

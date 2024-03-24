@@ -1,0 +1,10 @@
+
+<h1>Edit and Save</h1>
+
+<form method="post" action="edit_hospital1">
+<p>Name <input type="text" name="T1" value="{{ result[0][0] }}" /> </p>
+<p>Address <input type="text" name="T2" value="{{ result[0][1] }}" /> </p>
+<p>Contact <input type="text" name="T3" value="{{ result[0][2] }}" /> </p>
+<p>Email <input readonly type="text" name="T4" value="{{ result[0][3] }}" /> </p>
+<p><input type="submit" name="B1" value="Save Changes" /> </p>
+</form>

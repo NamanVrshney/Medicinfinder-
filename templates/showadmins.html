@@ -1,0 +1,31 @@
+{% extends "admin.html" %}
+{% block n2 %}
+<h1>Admin</h1>
+{% if result %}
+{% for row in result %}
+    <h3>Name : {{row[0]}}</h3>
+    <p>
+        Address : <b>{{row[1]}}</b><br/>
+        Contact : {{row[2]}}<br/>
+        Email : {{row[3]}}<br/>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <form method="post" action="editadmin">
+                <input type="hidden" name="email" value="{{row[3]}}" />
+                <input type="submit" name="BI" value="Edit" />
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="delete_admin">
+                <input type="hidden" name="H1" value="{{row[3]}}">
+                <input type="submit" value="delete">
+            </td>
+        </tr>
+    </table>
+
+{% endfor %}
+{% endif %}
+
+{% endblock %}

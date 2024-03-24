@@ -1,0 +1,50 @@
+{% extends 'master.html' %}
+
+{% block m1 %}
+
+    <form method="post" >
+
+    <p>Speciality
+    <select name="T1">
+        <option>Cardiologist</option>
+        <option>Cardiovascular Surgeon</option>
+        <option>Dentist</option>
+        <option>Emergency Doctors</option>
+        <option>ENT Specialist</option>
+        <option>Gastroenterologist</option>
+        <option>General Psychiatrist</option>
+    </select>
+  </p>
+    <p><input type="submit" name="B1" value="search" /></p>
+    </form>
+
+
+    {% if result %}
+        {% for row in result %}
+            <table width="100%" >
+                <tr>
+                    <td width="33%" style="font-family: Arial;">
+                        Name : {{ row[0] }} <br/>
+                        Speciality: {{ row[1] }}<br/>
+                        Qualification: {{ row[2] }}<br/>
+                        Timing: {{ row[3] }}<br/>
+                        Days :
+                    </td>
+                    <td width="33%" style="font-family: Arial;">
+                        Hospital : {{ row[11] }}<br/>
+                        Address : {{ row[12] }}<br/>
+                        Contact : {{ row[13] }}<br/>
+                        Email : {{ row[14] }}
+                    </td>
+                    <td width="34%">
+                        <img alt="No Photo" src="../static/hospital_photos/{{ row[15] }}" width="200" height="100" />
+
+                    </td>
+                </tr>
+            </table>
+
+
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

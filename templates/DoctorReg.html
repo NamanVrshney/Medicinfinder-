@@ -1,0 +1,49 @@
+{% extends 'hospital_master.html' %}
+
+{% block m1 %}
+
+<h1>Doctor Registration</h1>
+<form id="form1" name="form1" method="post" action="doctor_reg">
+  <p>Name
+    <input type="text" name="T1" id="T1" />
+  </p>
+  <p>Speciality
+    <select name="T2">
+        <option>Cardiologist</option>
+        <option>Cardiovascular Surgeon</option>
+        <option>Dentist</option>
+        <option>Emergency Doctors</option>
+        <option>ENT Specialist</option>
+        <option>Gastroenterologist</option>
+        <option>General Psychiatrist</option>
+    </select>
+  </p>
+  <p>Qaulification
+    <input type="text" name="T3" id="T3" />
+  </p>
+  <p>Time (Like 7am To 9am)
+    <input type="text" name="T4" id="T4" />
+  </p>
+  <p>Days
+    <input type="checkbox" name="C1" id="C1" value="mon" />Monday
+    <input type="checkbox" name="C1" id="C2" value="tue" />Tuesday
+    <input type="checkbox" name="C1" id="C3" value="wed" />Wednesday
+    <input type="checkbox" name="C1" id="C4" value="thu" />Thursday
+    <input type="checkbox" name="C1" id="C5" value="fri" />Friday
+    <input type="checkbox" name="C1" id="C6" value="sat" />Saturday
+    <input type="checkbox" name="C1" id="C7" value="sun" />Sunday
+  </p>
+  <p>
+    <input type="submit" name="B1" id="B1" value="Add" />
+  </p>
+</form>
+
+{% if data %}
+    <h3>{{ data }}</h3>
+{% endif %}
+
+{% if args %}
+    <p>{{ args }}</p>
+{% endif %}
+
+{% endblock %}

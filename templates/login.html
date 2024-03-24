@@ -1,0 +1,13 @@
+{% extends "welcome.html" %}
+{% block n1 %}
+<h1>SignIn</h1>
+<form method="post" action="login">
+    <p>Email <input type="text" name="T1" id="txt1" /> </p>
+    <p>Password <input type="password" name="T2" id="txt2" /> </p>
+    <button name="B1">Login</button>
+</form>
+{% if msg %}
+<h1>{{msg}}</h1>
+{% endif %}
+
+{% endblock %}

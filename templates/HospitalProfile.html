@@ -1,0 +1,15 @@
+{% extends 'hospital_master.html' %}
+
+{% block m1 %}
+
+    <h1>Profile</h1>
+    {% if row %}
+        <img src="../static/hospital_photos/{{ row[4] }}" width="200" height="100" />
+        <h3>Name : {{ row[0] }}</h3>
+        <p>
+            Address : {{ row[1] }}<br />
+            Contact : {{ row[2] }}<br />
+            Email : {{ row[3] }}<br />
+        </p>
+    {% endif %}
+{% endblock %}

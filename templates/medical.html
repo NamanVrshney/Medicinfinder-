@@ -1,0 +1,63 @@
+<html>
+<head>
+<link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<script src="../static/jquery/jquery.js"></script>
+<script>
+	$(document).ready(function(e) {
+        $("#a1").click(function(){
+			$("#b1").slideToggle();
+		});
+		$("#a2").click(function(){
+			$("#b2").slideToggle();
+		});
+    });
+</script>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Naman</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown" id="a1">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Medicine</a>
+          <div class="dropdown-menu" id="b1">
+            <a href="medicine_add" class="dropdown-item">Add</a>
+            <a href="show_medicine" class="dropdown-item">Manage</a>
+
+            </div>
+            </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="logout">LOG OUT</a>
+
+        <li class="nav-item"><a class="nav-link" href="changepass_medical">Change Pass</a></li>
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<div class="row" style="min-height:25rem;">
+	<div >
+        {% block n3 %}
+        {% endblock %}
+    </div>
+    <div ></div>
+</div>
+
+<div class="row" style="height:12.5rem; ">
+
+</div>
+
+</body>
+</html>

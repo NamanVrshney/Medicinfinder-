@@ -1,0 +1,16 @@
+{% extends "admin.html" %}
+{% block n2 %}
+<h1>Admin Block</h1>
+<a href="showadmins">Go to Show admin </a><br/>
+<a href="changepass_admin">Go to change pass</a><br/>
+<a href="medical_reg">Medical Regstration</a>
+
+{% if photo == 'no' %}
+    <p><a href="adminphoto">Upload Photo</a></p>
+{% else %}
+    <p><img src="../static/photos/{{photo}}" width="200" height="225" />
+        <br/>
+        <a href="change_adminphoto">Change Photo</a>
+    </p>
+{% endif %}
+{% endblock %}

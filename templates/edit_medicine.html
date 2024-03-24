@@ -1,0 +1,20 @@
+{% extends "medical.html" %}
+{% block n3 %}
+
+<h1>Edit Medicine</h1>
+{% if vgt %}
+
+<form method="POST" action="edit_medicine_1">
+    <p>Medicine Name : <input type="text" name="T1" id="txt1" value="{{vgt[1]}}"></p>
+    <P>company name:<input type="text" name="T2" id="txt2" value="{{vgt[2]}}"></P>
+    <P>l_no:<input type="text" name="T3" id="txt3" value="{{vgt[3]}}"></P>
+    <P>type of medicine:<input type="text" name="T4" id="txt4" value="{{vgt[4]}}"></P>
+    <P>price:<input type="text" name="T5" id="txt5" value="{{vgt[5]}}"></P>
+    <button type="submit" name="B1" id="btn1">edit</button>
+</form>
+
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}

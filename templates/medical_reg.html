@@ -1,0 +1,21 @@
+{% extends "admin.html"%}
+{% block n2 %}
+
+<h1>Medical Registration</h1>
+<form method="POST" action="medical_reg">
+    <p>name:<input type="text" id="txt1" name="T1"></p>
+    <p>owner:<input type="text" id="txt2" name="T2"></p>
+    <p>lno:<input type="text" id="txt3" name="T3"></p>
+    <p>contact:<input type="text" id="txt4" name="T4"></p>
+    <p>address:<input type="text" id="txt5" name="T5"></p>
+    <p>email:<input type="text" id="txt6" name="T6"></p>
+    <p>password:<input type="text" id="txt7" name="T7"></p>
+    <p>cpassword:<input type="text" id="txt8" name="T8"></p>
+    <button type="submit" id="btn1" name="B1">Register</button>
+</form>
+
+{% if Naman %}
+    <h3>{{Naman}}</h3>
+{% endif %}
+
+{% endblock %}

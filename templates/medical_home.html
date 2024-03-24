@@ -1,0 +1,17 @@
+{% extends "medical.html" %}
+{% block n3 %}
+<h1>Medical Block</h1>
+<a href="medicine_add">Add Medicine</a><br/>
+<a href="show_medicine">Show Medicine</a>
+
+{% if photo == 'no' %}
+    <p><a href="medicalphoto">Upload Photo</a> </p>
+{% else %}
+    <p><img src="../static/photos/{{photo}}" width="200" height="225" />
+        <br/>
+        <a href="change_medicalphoto">Change Photo</a>
+    </p>
+{% endif %}
+
+
+{% endblock %}

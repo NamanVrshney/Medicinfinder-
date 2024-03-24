@@ -1,0 +1,87 @@
+{% extends 'hospital_master.html' %}
+
+{% block m1 %}
+
+
+<h1>Edit Doctor Details</h1>
+{% if data %}
+<form id="form1" name="form1" method="post" action="edit_doctor1">
+  <p>Name
+    <input type="text" name="T1" id="T1" value="{{ data[0] }}" />
+  </p>
+    <p>
+        <input type="hidden" name="spec" value="{{ data[1] }}" />
+        <input type="hidden" name="oldname" value="{{ data[0] }}" />
+    </p>
+  <p>Speciality : {{ data[1] }}
+      &nbsp; &nbsp; &nbsp;
+    <select name="T2">
+        <option>Select To Change</option>
+        <option>Cardiologist</option>
+        <option>Cardiovascular Surgeon</option>
+        <option>Dentist</option>
+        <option>Emergency Doctors</option>
+        <option>ENT Specialist</option>
+        <option>Gastroenterologist</option>
+        <option>General Psychiatrist</option>
+    </select>
+  </p>
+  <p>Qaulification
+
+    <input type="text" name="T3" id="T3" value="{{ data[2] }}" />
+  </p>
+  <p>Time (Like 7am To 9am)
+    <input type="text" name="T4" id="T4" value="{{ data[3] }}" />
+  </p>
+  <p>Days
+      {% if data[4]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="mon" />Mon
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="mon" />Mon
+      {% endif %}
+
+       {% if data[5]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="tue" />Tue
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="tue" />Tue
+      {% endif %}
+
+       {% if data[6]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="wed" />Wed
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="wed" />Wed
+      {% endif %}
+
+        {% if data[7]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="thu" />Thu
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="thu" />Thu
+      {% endif %}
+
+        {% if data[8]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="fri" />Fri
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="fri" />Fri
+      {% endif %}
+
+    {% if data[9]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="sat" />Sat
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="sat" />Sat
+      {% endif %}
+
+    {% if data[10]=='yes' %}
+        <input type="checkbox" checked name="C1" id="C1" value="sun" />Sun
+      {% else %}
+          <input type="checkbox"  name="C1" id="C1" value="sun" />Sun
+      {% endif %}
+  </p>
+  <p>
+    <input type="submit" name="B1" id="B1" value="Save Changes" />
+  </p>
+</form>
+{% else %}
+    <h2>No Data Found</h2>
+{% endif %}
+
+{% endblock %}

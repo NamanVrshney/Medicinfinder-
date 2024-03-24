@@ -1,0 +1,18 @@
+{% extends "medical.html" %}
+{% block n3 %}
+
+<h1>medicine add</h1>
+<form method="POST" action="medicine_add">
+    <p>Medicine Name:<input type="text" name="T2" id="txt2"></p>
+    <p>Company Name:<input type="text" name="T3" id="txt3"></p>
+    <p>Unit Prize:<input type="text" name="T4" id="txt4"></p>
+    <p>Description:<input type="text" name="T5" id="txt5"></p>
+    <p>Email of Medical:<input type="text" name="T6" id="txt6"></p>
+    <button type="submit" id="btn1" name="B1">Submit</button>
+</form>
+
+{% if vgt %}
+<h3>{{vgt}}</h3>
+{% endif %}
+
+{% endblock %}

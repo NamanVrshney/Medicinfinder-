@@ -1,0 +1,46 @@
+{% extends "welcome.html" %}
+{% block n1 %}
+<h1>Welcome to Medicine Finder</h1>
+
+<form method="post" action="">
+
+    Medicine Name
+    {% if mname %}
+        <input type="text" value="{{mname}}" name="T1" />
+    {% else %}
+        <input type="text" name="T1" />
+    {% endif %}
+    <button type="submit" name="B1">Search</button>
+</form>
+{% if data %}
+
+<table cellpadding="10" cellspacing="10">
+
+{% for d in data %}
+
+<tr>
+    <td>
+        <h3>{{d[1]}}</h3>
+        company : {{d[2]}}<br>
+        unit_prize : {{d[3]}}<br>
+        description : {{d[4]}}<br>
+</td>
+    <td>
+        <h3>{{d[6]}}</h3>
+        Address : {{d[10]}}<br/>
+        Contact : {{d[11]}}<br/>
+    </td>
+</tr>
+
+{% endfor %}
+</table>
+
+{% elif msg %}
+{{msg}}
+{% endif %}
+<a href="show_user_medicine">See All Medicine </a><br/>
+{% endblock %}
+
+
+
+

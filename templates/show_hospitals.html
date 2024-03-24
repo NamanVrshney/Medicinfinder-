@@ -1,0 +1,53 @@
+{% extends 'adminmaster.html' %}
+
+{% block m1 %}
+
+<h1>Hospitals</h1>
+
+{% for row in result %}
+
+    {% if row[4]=='no' %}
+        <form method="post" enctype="multipart/form-data" action="hospital_photo">
+        <p>
+        <input type="hidden" name="H1" value="{{ row[3] }}" />
+        Photo <input type="file" name="F1"  />
+        <input type="submit" name="B1" value="Upload" />
+        </p>
+        </form>
+    {% else %}
+        <img src="../static/hospital_photos/{{ row[4] }}" width="200" height="100" />
+        <form method="post" action="chnage_hospital_photo">
+        <input type="hidden" name="H1" value="{{ row[3] }}" />
+        <input type="hidden" name="H2" value="{{ row[4] }}" />
+        <input type="submit" name="B1" value="Change" />
+        </form>
+    {% endif %}
+
+    <h3>Name : {{ row[0] }}</h3>
+    <p>
+        Address : {{ row[1] }}<br />
+        Contact : {{ row[2] }}<br />
+        Email : {{ row[3] }}<br />
+        <table border="0">
+            <tr>
+                <td>
+                    <form method="post" action="edit_hospital">
+                        <input type="hidden" name="H1" value="{{ row[3] }}" />
+                        <input type="submit" name="B1" value="Edit" />
+                    </form>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <form method="post" action="delete_hospital">
+                        <input type="hidden" name="H1" value="{{ row[3] }}" />
+                        <input type="submit" name="B1" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+    </p>
+    <hr/>
+{% endfor %}
+
+{% endblock %}
